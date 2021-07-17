@@ -1,11 +1,17 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-        <ion-title>
-          <img src="https://img.icons8.com/cute-clipart/34/000000/copybook.png" />
-          All Memories
-        </ion-title>
+      <ion-toolbar class="ion-text-uppercase">
+          <ion-row>
+            <ion-col size="2" class="ion-text-center">
+               <img src="https://img.icons8.com/fluent/32/000000/noticeboard.png"/>
+            </ion-col>
+            <ion-col size="10" class="ion-text-start">
+                <ion-text>
+                      All Memories
+                </ion-text>
+            </ion-col>
+          </ion-row>
       </ion-toolbar>
     </ion-header>
     <ion-content>
@@ -22,10 +28,12 @@
 import {
     IonPage,
     IonHeader,
-    IonTitle,
     IonContent,
     IonToolbar,
     IonList,
+    IonRow,
+    IonCol,
+    IonText,
     IonItem
 } from "@ionic/vue";
 
@@ -33,19 +41,28 @@ export default {
   name: "MemoriesPage",
   components: {
     IonContent,
-    IonTitle,
+    IonText,
     IonPage,
     IonHeader,
     IonToolbar,
     IonList,
+    IonRow,
+    IonCol,
     IonItem
   }
 }
 </script>
 
 <style scoped>
-  ion-title {
+  ion-text {
     font-weight: bold;
+    font-size: 1.25rem;
     font-family: 'Ultra', serif;
+
+  }
+
+  ion-row {
+    display: flex;
+    align-items: center;
   }
 </style>
