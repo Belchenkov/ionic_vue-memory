@@ -1,10 +1,16 @@
 <template>
   <base-layout page-title="All Memories">
       <ion-list>
-        <ion-item router-link="/memories/1">A trip into the mountains</ion-item>
-        <ion-item>Surfing the sea side</ion-item>
-        <ion-item>Good eating</ion-item>
-        <ion-item>Buy Products</ion-item>
+        <ion-item
+            v-for="memory in memories"
+            :router-link="`/memories/${memory.id}`"
+            :key="memory.id"
+        >
+          <ion-thumbnail slot="start">
+            <ion-img :src="memory.image" :alt="memory.title" />
+          </ion-thumbnail>
+          {{ memory.title }}
+        </ion-item>
       </ion-list>
   </base-layout>
 </template>
@@ -12,14 +18,28 @@
 <script>
 import {
     IonList,
-    IonItem
+    IonItem,
+    IonImg,
+    IonThumbnail
 } from "@ionic/vue";
 
 export default {
   name: "MemoriesPage",
   components: {
     IonList,
-    IonItem
+    IonItem,
+    IonImg,
+    IonThumbnail
+  },
+  data() {
+    return {
+
+    }
+  },
+  computed: {
+    memories() {
+      return this.$store.getters.memories;
+    }
   }
 }
 </script>
