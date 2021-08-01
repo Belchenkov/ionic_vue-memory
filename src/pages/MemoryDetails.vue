@@ -6,14 +6,19 @@
     <h2 v-if="!loadedMemory">
       Could not find a memory for the given id.
     </h2>
-    <h2 v-else>Loaded it</h2>
+    <h2 v-else>
+      <memory-overview />
+    </h2>
   </base-layout>
 </template>
 <script>
+import MemoryOverview from "../compoents/memories/MemoryOverview";
 
 export default {
   name: "MemoryDetails",
-  components: {},
+  components: {
+    MemoryOverview
+  },
   data() {
     return {
       memoryId: this.$route.params.id

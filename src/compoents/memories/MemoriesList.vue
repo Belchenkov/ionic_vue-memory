@@ -1,6 +1,10 @@
 <template>
   <ion-list>
-    <memory-list-item :memory="memory" v-for="memory in memories" :key="memory.id" />
+    <memory-list-item
+        :memory="memory"
+        v-for="memory in memories"
+        :key="memory.id"
+    />
   </ion-list>
 </template>
 
