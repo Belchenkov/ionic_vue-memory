@@ -6,16 +6,19 @@
     <h2 v-if="!loadedMemory">
       Could not find a memory for the given id.
     </h2>
-    <h2 v-else>
-      <memory-overview />
-    </h2>
+    <memory-overview
+      v-else
+      :image="loadedMemory.image"
+      :title="loadedMemory.title"
+      :description="loadedMemory.description"
+    />
   </base-layout>
 </template>
 <script>
 import MemoryOverview from "../compoents/memories/MemoryOverview";
 
 export default {
-  name: "MemoryDetails",
+  name: "MemoryDetailsPage",
   components: {
     MemoryOverview
   },

@@ -4,12 +4,15 @@
       <ion-toolbar class="ion-text-uppercase">
         <ion-row>
           <ion-col size="2" class="ion-text-center">
-            <img src="https://img.icons8.com/fluent/32/000000/noticeboard.png"/>
+            <img src="https://img.icons8.com/fluent/32/000000/noticeboard.png" alt="Logo"/>
           </ion-col>
           <ion-col size="8" class="ion-text-start">
             <ion-text>{{ pageTitle }}</ion-text>
           </ion-col>
           <ion-col size="2">
+            <ion-buttons>
+              <slot name="add-btn"></slot>
+            </ion-buttons>
             <ion-back-button :default-href="pageDefaultBackLink"></ion-back-button>
           </ion-col>
         </ion-row>
@@ -52,8 +55,12 @@ export default {
     IonToolbar,
     IonRow,
     IonCol,
-    IonBackButton
-  }
+    IonBackButton,
+  },
+  data() {
+    return {
+    }
+  },
 }
 </script>
 
