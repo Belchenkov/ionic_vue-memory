@@ -10,10 +10,13 @@
             <ion-text>{{ pageTitle }}</ion-text>
           </ion-col>
           <ion-col size="2">
+            <ion-back-button
+                v-show="!mainPage"
+                :default-href="pageDefaultBackLink"
+            ></ion-back-button>
             <ion-buttons>
               <slot name="add-btn"></slot>
             </ion-buttons>
-            <ion-back-button :default-href="pageDefaultBackLink"></ion-back-button>
           </ion-col>
         </ion-row>
       </ion-toolbar>
@@ -61,6 +64,13 @@ export default {
     return {
     }
   },
+  mounted() {
+  },
+  computed: {
+    mainPage() {
+      return this.$route.path === '/memories';
+    }
+  }
 }
 </script>
 
