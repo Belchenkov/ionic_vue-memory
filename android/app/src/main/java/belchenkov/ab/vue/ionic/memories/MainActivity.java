@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package belchenkov.ab.vue.ionic.memories;
 
 import com.getcapacitor.BridgeActivity;
 

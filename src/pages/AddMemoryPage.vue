@@ -3,7 +3,7 @@
       page-title="Add a Memory"
       page-default-back-link="/memories"
   >
-    <create-memory-form @save-memory="saveMemory"></create-memory-form>
+    <create-memory-form @save-memory="saveMemory" />
   </base-layout>
 </template>
 
