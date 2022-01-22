@@ -2,6 +2,8 @@
 
 > Build a complete native mobile app with forward-backward navigation, various Ionic components and the native device camera with Ionic, Capacitor and Vue.
 
+### Preview
+![screenshot](./screen.png)
 ### Get started
 
 - git clone

@@ -1,9 +1,9 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "ionic-vue-memory",
+  "appId": "belchenkov.ab.vue.ionic.memories",
+  "appName": "Ionic Vue Memory",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "dist",
+  "webDir": "public",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0

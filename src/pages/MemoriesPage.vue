@@ -1,51 +1,46 @@
 <template>
-  <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>
-          <img src="https://img.icons8.com/cute-clipart/34/000000/copybook.png" />
-          All Memories
-        </ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list>
-        <ion-item>1</ion-item>
-        <ion-item>2</ion-item>
-        <ion-item>3</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-page>
+  <base-layout page-title="All Memories">
+    <template v-slot:add-btn>
+      <ion-button
+          router-link="/memories/add"
+          shape="round"
+          color="dark"
+      >
+        <ion-icon slot="icon-only" :icon="add"></ion-icon>
+      </ion-button>
+    </template>
+    <memories-list :memories="memories" />
+  </base-layout>
 </template>
 
 <script>
+import MemoriesList from "../compoents/memories/MemoriesList";
 import {
-    IonPage,
-    IonHeader,
-    IonTitle,
-    IonContent,
-    IonToolbar,
-    IonList,
-    IonItem
+  IonButton,
+  IonIcon
 } from "@ionic/vue";
+import { add } from 'ionicons/icons';
 
 export default {
   name: "MemoriesPage",
   components: {
-    IonContent,
-    IonTitle,
-    IonPage,
-    IonHeader,
-    IonToolbar,
-    IonList,
-    IonItem
+    MemoriesList,
+    IonButton,
+    IonIcon,
+  },
+  data() {
+    return {
+      add
+    }
+  },
+  computed: {
+    memories() {
+      return this.$store.getters.memories;
+    }
   }
 }
 </script>
 
 <style scoped>
-  ion-title {
-    font-weight: bold;
-    font-family: 'Ultra', serif;
-  }
+
 </style>
